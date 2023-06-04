@@ -76,8 +76,8 @@ Resolving deltas: 100% (19622/19622), done.
                                                                                                                                                                                                                                            
 ┌──(kali㉿kali)-[~/…/workspace/projects/lab05/banking]
 └─$ nano CMakeLists.txt
-```
-```sh
+ ```
+ ```sh
 cmake_minimum_required(VERSION 3.4)
 project(bank_lib)
 set(CMAKE_CXX_STANDARD 11)
@@ -95,8 +95,8 @@ add_library(banking STATIC Account.cpp Account.h Transaction.cpp Transaction.h)
                                                                                                                                                                                                                                            
 ┌──(kali㉿kali)-[~/…/lab05/banking/.github/workflows]
 └─$ nano cmake.yml
-```
-```sh
+ ```
+ ```sh
 name: CMake
 on:
  push:
@@ -124,11 +124,12 @@ jobs:
     uses: coverallsapp/github-action@v1.1.2
     with:
       github-token: ${{ secrets.GITHUB_TOKEN }}
-      ```   
-      ```
+```
+```
 ┌──(kali㉿kali)-[~/…/lab05/banking/.github/workflows]
 └─$ nano CMakeLists.txt
-         ```                                                                                                                                                       ```sh
+ ```
+ ```sh
       cmake_minimum_required(VERSION 3.4)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -166,7 +167,8 @@ endif()
                                                                                                                                                                                                                                            
 ┌──(kali㉿kali)-[~/…/banking/.github/workflows/tests]
 └─$ nano test_Account.cpp
- ```                                                                                                                                                        ```sh
+ ```
+ ```sh
 #include <Account.h>
 #include <gtest/gtest.h>
 
@@ -181,7 +183,7 @@ TEST(Account, Banking){
 	test.Unlock();
 	ASSERT_THROW(test.ChangeBalance(100), std::runtime_error);
 }
- ```
+```
 ```
 ┌──(kali㉿kali)-[~/…/banking/.github/workflows/tests]
 └─$ nano test_Transaction.cpp
