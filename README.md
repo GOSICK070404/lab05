@@ -73,7 +73,7 @@ Resolving deltas: 100% (19622/19622), done.
                                                                                                                                                                                                                                            
 ┌──(kali㉿kali)-[~/…/workspace/projects/lab05/banking]
 └─$ rm CMakeList.txt
-                                                                                                                                                                                                                                           
+```                                                                                                                                                        ```sh                                                                              
 ┌──(kali㉿kali)-[~/…/workspace/projects/lab05/banking]
 └─$ nano CMakeLists.txt
  ```
@@ -83,7 +83,7 @@ project(bank_lib)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(banking STATIC Account.cpp Account.h Transaction.cpp Transaction.h)
-```                                                                                                                                                          ```                                                                                 
+```                                                                                                                                                          ```sh                                                                                 
 ┌──(kali㉿kali)-[~/…/workspace/projects/lab05/banking]
 └─$ mkdir .github
                                                                                                                                                                                                                                            
@@ -125,7 +125,7 @@ jobs:
     with:
       github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
-```
+```sh
 ┌──(kali㉿kali)-[~/…/lab05/banking/.github/workflows]
 └─$ nano CMakeLists.txt
  ```
@@ -158,7 +158,7 @@ if(BUILD_TESTS)
   add_test(NAME check COMMAND check)
 endif()
 ```
-```
+```sh
 ┌──(kali㉿kali)-[~/…/lab05/banking/.github/workflows]
 └─$  mkdir tests
                                                                                                                                                                                                                                            
@@ -184,7 +184,7 @@ TEST(Account, Banking){
 	ASSERT_THROW(test.ChangeBalance(100), std::runtime_error);
 }
 ```
-```
+```sh
 ┌──(kali㉿kali)-[~/…/banking/.github/workflows/tests]
 └─$ nano test_Transaction.cpp
  ```
@@ -216,7 +216,7 @@ TEST(Transaction, Banking){
 	ASSERT_EQ(Alice.GetBalance(), base_A-1000-base_fee);
 }
 ```
-```
+```sh
 ┌──(kali㉿kali)-[~/…/banking/.github/workflows/tests]
 └─$  mkdir coverage
                                                                                                                                                                                                                                            
