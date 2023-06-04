@@ -77,12 +77,13 @@ Resolving deltas: 100% (19622/19622), done.
 ┌──(kali㉿kali)-[~/…/workspace/projects/lab05/banking]
 └─$ nano CMakeLists.txt
 ```
+```sh
 cmake_minimum_required(VERSION 3.4)
 project(bank_lib)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(banking STATIC Account.cpp Account.h Transaction.cpp Transaction.h)
-```                                                                                                                                                                                                                                           
+```                                                                                                                                                          ```                                                                                 
 ┌──(kali㉿kali)-[~/…/workspace/projects/lab05/banking]
 └─$ mkdir .github
                                                                                                                                                                                                                                            
@@ -95,6 +96,7 @@ add_library(banking STATIC Account.cpp Account.h Transaction.cpp Transaction.h)
 ┌──(kali㉿kali)-[~/…/lab05/banking/.github/workflows]
 └─$ nano cmake.yml
 ```
+```sh
 name: CMake
 on:
  push:
@@ -122,10 +124,11 @@ jobs:
     uses: coverallsapp/github-action@v1.1.2
     with:
       github-token: ${{ secrets.GITHUB_TOKEN }}
-      ```                                                                                                                                                                                                                                           
+      ```   
+      ```
 ┌──(kali㉿kali)-[~/…/lab05/banking/.github/workflows]
 └─$ nano CMakeLists.txt
-                                                                                                                                                                    ```
+         ```sh                                                                                                                                                        ```
       cmake_minimum_required(VERSION 3.4)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -153,7 +156,8 @@ if(BUILD_TESTS)
   target_link_libraries(check banking gtest_main gmock_main)
   add_test(NAME check COMMAND check)
 endif()
-```                                                                             
+```
+```
 ┌──(kali㉿kali)-[~/…/lab05/banking/.github/workflows]
 └─$  mkdir tests
                                                                                                                                                                                                                                            
@@ -162,7 +166,7 @@ endif()
                                                                                                                                                                                                                                            
 ┌──(kali㉿kali)-[~/…/banking/.github/workflows/tests]
 └─$ nano test_Account.cpp
-                                                                                                                                                            ```
+ ```                                                                                                                                                         ```sh
 #include <Account.h>
 #include <gtest/gtest.h>
 
@@ -177,10 +181,12 @@ TEST(Account, Banking){
 	test.Unlock();
 	ASSERT_THROW(test.ChangeBalance(100), std::runtime_error);
 }
-```                                                                               
+```
+```
 ┌──(kali㉿kali)-[~/…/banking/.github/workflows/tests]
 └─$ nano test_Transaction.cpp
  ```
+ ```sh
 #include <Account.h>
 #include <Transaction.h>
 #include <gtest/gtest.h>
@@ -207,7 +213,8 @@ TEST(Transaction, Banking){
 	ASSERT_EQ(Bob.GetBalance(), base_B+1000);
 	ASSERT_EQ(Alice.GetBalance(), base_A-1000-base_fee);
 }
-```                                                                                                                                                                                                                                          
+```
+```
 ┌──(kali㉿kali)-[~/…/banking/.github/workflows/tests]
 └─$  mkdir coverage
                                                                                                                                                                                                                                            
