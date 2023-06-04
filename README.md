@@ -128,7 +128,7 @@ jobs:
       ```
 ┌──(kali㉿kali)-[~/…/lab05/banking/.github/workflows]
 └─$ nano CMakeLists.txt
-         ```sh                                                                                                                                                        ```
+         ```                                                                                                                                                       ```sh
       cmake_minimum_required(VERSION 3.4)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -166,7 +166,7 @@ endif()
                                                                                                                                                                                                                                            
 ┌──(kali㉿kali)-[~/…/banking/.github/workflows/tests]
 └─$ nano test_Account.cpp
- ```                                                                                                                                                         ```sh
+ ```                                                                                                                                                        ```sh
 #include <Account.h>
 #include <gtest/gtest.h>
 
@@ -181,7 +181,7 @@ TEST(Account, Banking){
 	test.Unlock();
 	ASSERT_THROW(test.ChangeBalance(100), std::runtime_error);
 }
-```
+ ```
 ```
 ┌──(kali㉿kali)-[~/…/banking/.github/workflows/tests]
 └─$ nano test_Transaction.cpp
